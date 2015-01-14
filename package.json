@@ -33,6 +33,7 @@
   "author": "TheAlphaNerd",
   "license": "ISC",
   "dependencies": {
+    "6to5ify": "^3.1.2",
     "brfs": "^1.2.0",
     "cssify": "^0.6.0",
     "famous": "^0.3.4",

@@ -2,7 +2,6 @@ import View from 'famous/core/View'
 import Modifier from 'famous/core/Modifier'
 import Transform from 'famous/core/Transform'
 import ImageSurface from 'famous/surfaces/ImageSurface'
-// your app here
 
 class SpinView extends View {
     constructor() {
@@ -17,19 +16,16 @@ class SpinView extends View {
         const centerSpinModifier = new Modifier({
             align: [0.5, 0.5],
             origin: [0.5, 0.5],
-            transform: function() {
-                return Transform.rotateY(.002 * (Date.now()))
-            }
+            transform: () => Transform.rotateY(.002 * Date.now())
         })
 
         this.add(centerSpinModifier).add(logo)
     }
 
     stopTheWorld() {
-        setTimeout(function() {
-            debugger
-        }, 2000)
+        setTimeout(() => { debugger }, 2000)
     }
 }
 
 export default SpinView
+

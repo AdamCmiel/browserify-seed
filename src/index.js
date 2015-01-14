@@ -10,9 +10,8 @@ import Engine from 'famous/core/Engine'
 
 // create the main context
 let mainContext = Engine.createContext()
+let spinner = new SpinView()
 
-let spinner = new SpinView
-
-// spinner.stopTheWorld()
+spinner.stopTheWorld()
 mainContext.add(spinner)
 
