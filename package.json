@@ -6,6 +6,7 @@
   "repository": "https://github.com/Famous/browserify-seed/",
   "browserify": {
     "transform": [
+      "6to5ify",
       "famousify",
       "cssify",
       "brfs"
