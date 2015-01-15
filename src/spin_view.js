@@ -2,28 +2,31 @@ import View from 'famous/core/View'
 import Modifier from 'famous/core/Modifier'
 import Transform from 'famous/core/Transform'
 import ImageSurface from 'famous/surfaces/ImageSurface'
+import Surface from 'famous/core/Surface'
+
+function loremIpsum() {
+    return '<div class="scroll-container">' + 
+        '<p class="scroll-text">' + 
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum" +
+        "</p></div>"
+}
 
 class SpinView extends View {
     constructor() {
         super()
 
-        const logo = new ImageSurface({
-            size: [200, 200],
-            content: 'images/famous_logo.png',
-            classes: ['backfaceVisibility']
-        })
-
-        const centerSpinModifier = new Modifier({
-            align: [0.5, 0.5],
+        const modifier = new Modifier({
+            size: [300, 300],
             origin: [0.5, 0.5],
-            transform: () => Transform.rotateY(.002 * Date.now())
+            align: [0.5, 0.5],
         })
 
-        this.add(centerSpinModifier).add(logo)
-    }
+        const surface = new Surface({
+            content: loremIpsum(),
+            classes: ['touch-scroll']
+        })
 
-    stopTheWorld() {
-        setTimeout(() => { debugger }, 2000)
+        this.add(modifier).add(surface)
     }
 }
 

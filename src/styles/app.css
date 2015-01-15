@@ -2,7 +2,55 @@ html {
   background: #fff;
 }
 
+body {
+  padding: 20px;
+}
+
 .backfaceVisibility {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
+}
+
+.no-overflow,
+.touch-scroll {
+    overflow:hidden;
+} 
+
+.touch-scroll,
+.scroll-container {
+    height: inherit;
+}
+
+.scroll-container {
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(52, 201, 171);
+}
+
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: white;
+}
+
+.scroll-text {
+    font-size: 24px;
+}
+
+p {
+    height: 200px;
 }
